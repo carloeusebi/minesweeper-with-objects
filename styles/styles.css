@@ -1,0 +1,204 @@
+/* css reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #c0c0c0;
+    --shadow-side: #808080;
+    --light-side: #ffffff;
+}
+
+img {
+    padding: 5px;
+    max-width: 100%;
+}
+
+body {
+    padding-top: 20px;
+    background-image: url(../img/windows-background.jpg);
+    background-size: cover;
+    font-family: 'orbitron';
+
+    user-select: none;
+}
+
+main {
+    background-color: var(--background);
+    width: 710px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 5px solid #555
+}
+
+header {
+    height: 150px;
+    margin: 20px;
+    padding: 10px;
+    border-top: 20px solid var(--shadow-side);
+    border-right: 20px solid var(--light-side);
+    border-bottom: 20px solid var(--light-side);
+    border-left: 20px solid var(--shadow-side);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header>* {
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: center;
+}
+
+#play-button {
+    width: 70px;
+    height: 70px;
+    background-color: var(--background);
+    border-top: 5px solid var(--light-side);
+    border-right: 5px solid var(--shadow-side);
+    border-bottom: 5px solid var(--shadow-side);
+    border-left: 5px solid var(--light-side);
+    cursor: pointer;
+}
+
+#play-button:active {
+    border-top: 5px solid var(--shadow-side);
+    border-right: 5px solid var(--light-side);
+    border-bottom: 5px solid var(--light-side);
+    border-left: 5px solid var(--shadow-side);
+}
+
+#play-button:active img {
+    translate: 2px 2px;
+}
+
+#difficulty {
+    border: 0;
+    outline: 0;
+    background-color: var(--background);
+}
+
+.score {
+    width: 150px;
+    height: 70px;
+
+    border-top: 5px solid var(--shadow-side);
+    border-right: 5px solid var(--light-side);
+    border-bottom: 5px solid var(--light-side);
+    border-left: 5px solid var(--shadow-side);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    background-color: black;
+    color: red;
+}
+
+#field {
+    height: 640px;
+    margin: 20px;
+    border-top: 20px solid var(--shadow-side);
+    border-right: 20px solid var(--light-side);
+    border-bottom: 20px solid var(--light-side);
+    border-left: 20px solid var(--shadow-side);
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#win-text {
+    font-family: serif;
+    font-weight: bolder;
+    font-size: 60px;
+    position: absolute;
+    left: 50%;
+    top: 185px;
+    transform: translateX(-50%);
+}
+
+#win-text.hidden {
+    display: none;
+}
+
+.cell {
+    border-top: 5px solid var(--light-side);
+    border-right: 5px solid var(--shadow-side);
+    border-bottom: 5px solid var(--shadow-side);
+    border-left: 5px solid var(--light-side);
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+.flag {
+    width: 85%;
+    height: 85%;
+}
+
+#field>.cell {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+#field.easy>.cell {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+
+#field.hard>.cell {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
+
+.cell.clicked,
+.cell.bomb,
+.cell.exploded {
+    border: 1px solid var(--shadow-side);
+}
+
+.cell.exploded {
+    background-color: red;
+}
+
+.cell.blue {
+    color: blue;
+}
+
+.cell.green {
+    color: green;
+}
+
+.cell.red {
+    color: red;
+}
+
+.cell.darkblue {
+    color: #01007f;
+}
+
+.cell.darkred {
+    color: #7f0102;
+}
+
+.cell.aqua {
+    color: #047f7e;
+}
+
+.cell.black {
+    color: black;
+}
+
+.cell.gray {
+    color: gray;
+}
